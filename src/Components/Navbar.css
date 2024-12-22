@@ -1,0 +1,203 @@
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: none;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Navbar Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-left: 20px;
+  position: relative; /* Important for positioning the dropdown */
+}
+
+/* Navbar Link */
+.navbar-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #555;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+.dropdown-menu a:hover {
+  color: #000000;
+}
+
+/* Navbar Button */
+.navbar-button {
+  margin-left: 20px;
+}
+
+.demo-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: #333;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.hamburger .rotate1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger .hide {
+  opacity: 0;
+}
+
+.hamburger .rotate2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.303); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Add the blur effect to the background */
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional, for shadow effect */
+    border-radius: 10px; /* Optional, rounded corners */
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .navbar-button {
+    display: none;
+  }
+
+  .navbar-button.open {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Adjust dropdown menu for mobile */
+  .navbar-item#product-features .dropdown-menu {
+    display: none;
+  }
+
+  .navbar-item#product-features.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent on mobile */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .dropdown-menu a {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+/* Desktop Styles (hover behavior) */
+@media (min-width: 769px) {
+  .navbar-item#product-features:hover .dropdown-menu {
+    display: block;
+  }
+}

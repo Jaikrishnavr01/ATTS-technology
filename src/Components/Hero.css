@@ -1,0 +1,176 @@
+/* Hero container */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff3cc, #ffe8e8); /* Light blue gradient */
+    overflow: hidden; /* Prevent bubbles from spilling out */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Text container */
+  .herotext {
+    position: relative;
+    z-index: 2; /* Keep text above bubbles */
+    text-align: center;
+    padding: 0 20px; /* Add padding for small screen sizes */
+  }
+  
+  /* Description section */
+  .hero_desc {
+    margin-top: 20px;
+  }
+  
+  .hero_btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .hero_btn:hover {
+    background-color: #e68a00;
+  }
+  
+  /* Bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(245, 200, 158, 0.4); /* Semi-transparent white */
+    filter: blur(20px); /* Blur for the glowing effect */
+    animation: float 15s infinite ease-in-out; /* Smooth floating animation */
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(0.8);
+    }
+    50% {
+      transform: translateY(50vh) scale(1.2);
+    }
+    100% {
+      transform: translateY(0vh) scale(0.5);
+    }
+  }
+  
+
+
+  /* Scroll down button */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 20px; /* Position at the bottom of the hero section */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    color: #ff9900;
+    text-decoration: none;
+    border: 2px solid #ff9900;
+    border-radius: 55px;
+    animation: bounce 1.5s infinite; /* Bounce animation */
+  }
+  
+  .scroll-down-btn:hover {
+    color: #e68a00; /* Slight color change on hover */
+  }
+  
+  .scroll-down-btn .arrow {
+    display: inline-block;
+    animation: bounce-arrow 1.5s infinite;
+  }
+  
+  /* Arrow bouncing animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Start at original position */
+    }
+    40% {
+      transform: translateY(-10px); /* Move up */
+    }
+    60% {
+      transform: translateY(5px); /* Move down */
+    }
+  }
+  
+  /* Arrow bounce animation */
+  @keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Original position */
+    }
+    40% {
+      transform: translateY(-10px); /* Move up */
+    }
+    60% {
+      transform: translateY(5px); /* Move down */
+    }
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 600px) {
+    .scroll-down-btn {
+      font-size: 2rem; /* Adjust arrow size for smaller screens */
+    }
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  
+/* For devices with a screen width of 600px or less */
+@media (max-width: 600px) {
+  .hero {
+    height: 100vh; /* Ensure the height fills the screen on mobile */
+  }
+
+  .herotext {
+    font-size: 0.9rem; /* Further reduce text size on mobile */
+    padding: 0 10px; /* Ensure text fits inside on small screens */
+  }
+
+  .hero_desc p {
+    font-size: 0.9em; /* Further reduce description text size */
+  }
+
+  .hero_btn {
+    padding: 8px 15px; /* Adjust button size */
+    font-size: 1em;
+  }
+
+  /* Adjust bubbles for small screens */
+  .bubble {
+    width: 30px; /* Smaller bubbles on mobile */
+    height: 30px; /* Ensure bubbles stay within viewport */
+    animation-duration: 12s; /* Faster animation for mobile */
+  }
+}
+
+  /* For devices with a screen width of 1024px or less (Tablets and Small Desktops) */
+  @media (max-width: 1024px) {
+    .hero {
+      height: 100vh; /* Keep the hero section height at full screen */
+    }
+  
+    .herotext {
+      font-size: 1.5em; /* Adjust text size */
+    }
+  
+    .hero_desc p {
+      font-size: 0.9em; /* Adjust description text size */
+    }
+  
+    .hero_btn {
+      padding: 10px 20px;
+      font-size: 1.1em;
+    }
+  
+    /* Adjust bubble sizes for tablets */
+    .bubble {
+      width: 50px; /* Adjust bubble size range for tablets */
+      height: 50px;
+      animation-duration: 14s; /* Slower animation for larger screens */
+    }
+  }
+  
