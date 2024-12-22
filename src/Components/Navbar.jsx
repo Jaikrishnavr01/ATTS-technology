@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,9 +33,9 @@ const Navbar = () => {
         {/* Navbar Menu */}
         <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
           <li className="navbar-item" id="home">
-            <a href="#partners" className="navbar-link">
+            <Link to="/" className="navbar-link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="navbar-item" id="product-features" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
             <a href="#resources" className="navbar-link">
@@ -43,7 +44,7 @@ const Navbar = () => {
             {/* Dropdown Menu */}
             {isDropdownOpen && (
               <ul className="dropdown-menu" id="dropdown-menu">
-                <a href='#11'> Feature 2</a>
+                <Link to="aupass" > Feature 2</Link>
               </ul>
             )}
           </li>
