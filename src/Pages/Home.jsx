@@ -54,15 +54,11 @@ const Home = () => {
     <div>
       <Hero/>
 
-{/* About Section */}
-
   <About />
 
 
-{/* Applisting Section */}
-<AnimatedSection>
   <Applisting />
-</AnimatedSection>
+
 
 <AnimatedSection>
   <FutureManagement />
