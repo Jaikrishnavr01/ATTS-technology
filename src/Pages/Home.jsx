@@ -55,9 +55,9 @@ const Home = () => {
       <Hero/>
 
 {/* About Section */}
-<AnimatedSection>
+
   <About />
-</AnimatedSection>
+
 
 {/* Applisting Section */}
 <AnimatedSection>
