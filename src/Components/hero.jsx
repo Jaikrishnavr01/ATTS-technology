@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   const [showDescription, setShowDescription] = useState(false);
@@ -41,7 +42,7 @@ function Hero() {
               Take Your Jewellery Store to the Next Level with AURUMM - The
               Ultimate Software Suite
             </p>
-            <button className="hero_btn">Schedule A Demo</button>
+          <Link to="contact"> <button className="hero_btn">Schedule A Demo</button> </Link>
           </div>
         )}
       </div>
