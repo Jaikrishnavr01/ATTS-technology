@@ -60,3 +60,5 @@ const Aupass = () => {
     </div>
   );
 };
+
+export default Aupass;
