@@ -4,39 +4,39 @@
     padding: 2rem;
     font-family: "Arial", sans-serif;
     background-color: #f8f9fa;
-  }
-  
-  .brands-title {
+}
+
+.brands-title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 2rem;
     color: #333;
-  }
-  
-  /* Container for logos */
-  .brands-container {
+}
+
+/* Container for logos */
+.brands-container {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: thin; /* Firefox */
-  }
-  
-  .brands-container::-webkit-scrollbar {
+}
+
+.brands-container::-webkit-scrollbar {
     height: 8px; /* Height of horizontal scrollbar */
-  }
-  
-  .brands-container::-webkit-scrollbar-thumb {
+}
+
+.brands-container::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-  }
-  
-  .brands-scroll {
+}
+
+.brands-scroll {
     display: flex;
     align-items: center;
     gap: 1rem; /* Spacing between brand cards */
-  }
-  
-  /* Brand card styling */
-  .brand-card {
+}
+
+/* Brand card styling */
+.brand-card {
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -47,11 +47,88 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .brand-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
+}
+
+.brand-card img {
+    width: 80px; /* Set image width to 80px */
+    height: 60px; /* Set image height to 60px */
+    object-fit: contain; /* Ensure image scales proportionally */
+    object-position: center; /* Center the image */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .brands-title {
+        font-size: 1.8rem;
+    }
+
+    .brand-card {
+        width: 130px;
+        height: 90px;
+    }
+
+    .brand-card img {
+        width: 70px; /* Adjust image size for medium screens */
+        height: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .brands-title {
+        font-size: 1.6rem;
+    }
+
+    .brand-card {
+        width: 120px;
+        height: 80px;
+    }
+
+    .brand-card img {
+        width: 60px; /* Adjust image size for tablets */
+        height: 45px;
+    }
+
+    .brands-scroll {
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .brands-title {
+        font-size: 1.4rem;
+    }
+
+    .brand-card {
+        width: 110px;
+        height: 75px;
+    }
+
+    .brand-card img {
+        width: 55px; /* Adjust image size for small tablets */
+        height: 40px;
+    }
+
+    .brands-scroll {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .brands-title {
+        font-size: 1.2rem;
+    }
+
+    .brand-card {
+        width: 100px;
+        height: 70px;
+    }
+
+    .brand-card img {
+        width: 50px; /* Set fixed image size for mobile screens */
+        height: 35px;
+    }
+
+    .brands-scroll {
+        gap: 0.3rem;
+    }
+}
