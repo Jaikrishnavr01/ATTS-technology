@@ -15,7 +15,7 @@ const Applisting = () => {
   };
 
   return (
-    <div className="app-listing-container">
+    <div className="app-listing-container" id='product1'>
       <h1 className="section-title">Featured Apps</h1>
       <p className="section-description">AURUMM for Your Jewellery Business</p>
 
@@ -70,7 +70,7 @@ const Applisting = () => {
       </div>
 
       {/* Buttons Below Cards */}
-      <div className="cta-buttons-container">
+      <div className="cta-buttons-container" >
         <button className="cta-button" onClick={() => handleButtonClick('auPay')}>Au Pay</button>
         <button className="cta-button" onClick={() => handleButtonClick('auSales')}>Au Sales</button>
         <button className="cta-button" onClick={() => handleButtonClick('auShop')}>Au Shop</button>

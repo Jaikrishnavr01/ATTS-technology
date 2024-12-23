@@ -55,7 +55,7 @@
   background-color: transparent;
   backdrop-filter: blur(10px);
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   display: none; /* Initially hidden */
   z-index: 1000;
 }

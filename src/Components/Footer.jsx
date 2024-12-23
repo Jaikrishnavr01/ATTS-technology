@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -17,8 +18,8 @@ function Footer() {
         <div style={styles.section}>
           <h4 style={styles.heading}>QUICKLINKS</h4>
           <ul style={styles.list}>
-            <li style={styles.listItem}><a href="#product" style={styles.link}>Product</a></li>
-            <li style={styles.listItem}><a href="#contact" style={styles.link}>Contact Us</a></li>
+            <li style={styles.listItem}><Link to="/" style={styles.link}>Home</Link></li>
+            <li style={styles.listItem}><Link to="contact" href="#contact" style={styles.link}>Contact Us</Link></li>
           </ul>
         </div>
 
@@ -26,9 +27,9 @@ function Footer() {
         <div style={styles.section}>
           <h4 style={styles.heading}>SOLUTIONS</h4>
           <ul style={styles.list}>
-            <li style={styles.listItem}><a href="#au-pay" style={styles.link}>AU Pay</a></li>
-            <li style={styles.listItem}><a href="#au-sales" style={styles.link}>AU Sales</a></li>
-            <li style={styles.listItem}><a href="#au-shop" style={styles.link}>AU Shop</a></li>
+            <li style={styles.listItem}><a href="#product1" style={styles.link}>AU Pay</a></li>
+            <li style={styles.listItem}><a href="#product1" style={styles.link}>AU Sales</a></li>
+            <li style={styles.listItem}><a href="#product1" style={styles.link}>AU Shop</a></li>
           </ul>
         </div>
 

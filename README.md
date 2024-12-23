@@ -14,3 +14,5 @@ Currently, two official plugins are available:
 
 ## npm i react-type-animation  
   - it used for typing animations
+
+## npm install emailjs-com framer-motion

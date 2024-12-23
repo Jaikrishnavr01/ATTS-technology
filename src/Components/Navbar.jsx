@@ -44,20 +44,20 @@ const Navbar = () => {
             {/* Dropdown Menu */}
             {isDropdownOpen && (
               <ul className="dropdown-menu" id="dropdown-menu">
-                <Link to="aupass" > Feature 2</Link>
+                <Link to="aupass" > Aupass</Link>
               </ul>
             )}
           </li>
           <li className="navbar-item" id="contact">
-            <a href="#company" className="navbar-link">
+          <Link to="contact" href="#company" className="navbar-link">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
         {/* Navbar Button */}
         <div className={`navbar-button ${isMenuOpen ? 'open' : ''}`}>
-          <button className="demo-button">Get a Free Demo</button>
+        <Link to="contact"><button className="demo-button">Get a Free Demo</button></Link>
         </div>
       </div>
     </nav>
