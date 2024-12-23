@@ -4,6 +4,10 @@ import Footer from './Components/Footer';
 import Aupass from './Components/Aupass';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
+// import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
 
 function App() {
   

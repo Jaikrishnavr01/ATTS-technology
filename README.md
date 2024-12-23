@@ -16,3 +16,6 @@ Currently, two official plugins are available:
   - it used for typing animations
 
 ## npm install emailjs-com framer-motion
+
+
+## npm install @fortawesome/fontawesome-free

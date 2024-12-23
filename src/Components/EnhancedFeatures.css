@@ -1,0 +1,136 @@
+.enhanced-features {
+    display: flex;
+    flex-direction: column; /* Stack content vertically on small screens */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+    background: #f9f9f9;
+  }
+  
+  .features-left {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .features-title {
+    font-size: 2rem; /* Slightly smaller for mobile */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .features-list {
+    display: grid;
+    grid-template-columns: 1fr; /* One column on mobile */
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .feature-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-icon-container {
+    background-color: #efefef;
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    color: #0056b3;
+  }
+  
+  .feature-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .features-right {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .dashboard-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  
+  .floating-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+  }
+  
+  .floating-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Tablet and Above */
+  @media (min-width: 768px) {
+    .enhanced-features {
+      flex-direction: row; /* Switch to a horizontal layout */
+      justify-content: space-between; /* Space between left and right sections */
+      padding: 40px;
+    }
+  
+    .features-left {
+      width: 50%; /* Half of the screen */
+      text-align: left; /* Align text to the left on larger screens */
+    }
+  
+    .features-title {
+      font-size: 2.5rem; /* Larger title size */
+    }
+  
+    .features-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid for feature items */
+    }
+  
+    .features-right {
+      width: 45%; /* Right section takes up remaining space */
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .enhanced-features {
+      padding: 50px; /* Larger padding for desktop */
+    }
+  
+    .features-left {
+      text-align: left; /* Ensure text is left-aligned */
+    }
+  
+    .features-title {
+      font-size: 3rem; /* Larger title for larger screens */
+    }
+  
+    .features-list {
+      grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+    }
+  
+    .floating-icons {
+      bottom: 20px; /* Adjust the floating icons position for larger screens */
+    }
+  }
+  

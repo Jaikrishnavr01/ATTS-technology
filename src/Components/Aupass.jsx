@@ -2,6 +2,7 @@ import React from 'react';
 import './Aupass.css';
 import App1 from '../assets/app1.svg'
 import App4 from '../assets/app4.svg'
+import EnhancedFeatures from './EnhancedFeatures';
 
 const Aupass = () => {
   return (
@@ -55,8 +56,7 @@ const Aupass = () => {
           </div>
         </section>
       </div>
+      <EnhancedFeatures/>
     </div>
   );
 };
-
-export default Aupass;

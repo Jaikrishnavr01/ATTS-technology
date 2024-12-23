@@ -1,13 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Applisting.css'; 
 import App1 from '../assets/app1.svg';
 import App2 from '../assets/app2.svg';
 import App3 from '../assets/app3.svg';
 import logo1 from '../assets/logo1.svg';
+import { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import FutureManagement from './FutureManagement';
+import EnhancedFeatures from './EnhancedFeatures';
 
 const Applisting = () => {
   // Initialize state with a default content (e.g., 'learnMore')
   const [activeContent, setActiveContent] = useState('auPay');  
+    // State for window width
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    // Event listener for window resize (with debouncing)
+    useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      const debouncedResize = () => {
+        clearTimeout(debouncedResize.timer);
+        debouncedResize.timer = setTimeout(handleResize, 200);
+      };
+  
+      window.addEventListener('resize', debouncedResize);
+  
+      // Cleanup on component unmount
+      return () => {
+        clearTimeout(debouncedResize.timer);
+        window.removeEventListener('resize', debouncedResize);
+      };
+    }, []);
+  
+    // Scroll progress
+    const { scrollYProgress } = useScroll();
+  
+    // Animation transforms for desktop views
+    const aboutOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 1]);
+    const aboutBackground = useTransform(scrollYProgress, [0.2, 0.5], ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)']);
+    const aboutTranslateY = useTransform(scrollYProgress, [0.2, 0.5], ['20%', '0%']);
+  
+    const AnimatedSection = ({ children, styleOverrides = {} }) => (
+      <motion.section
+        style={{
+          opacity: aboutOpacity,
+          y: aboutTranslateY,
+          background: aboutBackground,
+          ...styleOverrides,
+        }}
+        initial={windowWidth >= 768 ? { opacity: 0, y: '20%' } : undefined}
+        animate={windowWidth >= 768 ? { opacity: 1, y: '0%' } : undefined}
+        transition={windowWidth >= 768 ? { duration: 1 } : undefined}
+      >
+        {children}
+      </motion.section>
+    );
 
   // Function to handle button click and set active content
   const handleButtonClick = (contentId) => {
@@ -15,7 +62,7 @@ const Applisting = () => {
   };
 
   return (
-    <div className="app-listing-container" id='product1'>
+    <div className="app-listing-container">
       <h1 className="section-title">Featured Apps</h1>
       <p className="section-description">AURUMM for Your Jewellery Business</p>
 
@@ -36,6 +83,7 @@ const Applisting = () => {
             </div>
           </div>
         </div>
+
 
         {/* Card 2 */}
         <div className="flip-card">
@@ -68,6 +116,11 @@ const Applisting = () => {
           </div>
         </div>
       </div>
+
+      <AnimatedSection>
+  <EnhancedFeatures />
+</AnimatedSection>
+
 
       {/* Buttons Below Cards */}
       <div className="cta-buttons-container" >

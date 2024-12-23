@@ -3,6 +3,8 @@ import About from '../Components/About'
 import Applisting from '../Components/applisting'
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import FutureManagement from '../Components/FutureManagement';
+import TrustedBrands from '../Components/TrustedBrands';
 
 const Home = () => {
     // State for window width
@@ -61,6 +63,15 @@ const Home = () => {
 <AnimatedSection>
   <Applisting />
 </AnimatedSection>
+
+<AnimatedSection>
+  <FutureManagement />
+</AnimatedSection>
+
+<AnimatedSection>
+  <TrustedBrands />
+</AnimatedSection>
+
     </div>
   )
 }
